@@ -1,69 +1,25 @@
 import './App.css';
-import { Route, Routes, BrowserRouter } from 'react-router-dom';
-import Dogs from './Dogs.js';
-import Whiskey from './Whiskey.js';
-import Duke from './Duke.js';
-import Perry from './Perry.js';
-import Tubby from './Tubby.js';
+import { Route, Routes, BrowserRouter, Navigate } from 'react-router-dom';
+import Nav from './Nav';
+import DogsList from './DogsList';
+import DogDetails from './DogDetails';
+import { DOGS } from './DogsData';
+
+
 
 
 function App() {
-  App.defaultProps = {
-    dogs: [
-      {
-        name: "Whiskey",
-        age: 5,
-        src: Whiskey,
-        facts: [
-          "Whiskey loves eating popcorn.",
-          "Whiskey is a terrible guard dog.",
-          "Whiskey wants to cuddle with you!"
-        ]
-      },
-      {
-        name: "Duke",
-        age: 3,
-        src: Duke,
-        facts: [
-          "Duke believes that ball is life.",
-          "Duke likes snow.",
-          "Duke enjoys pawing other dogs."
-        ]
-      },
-      {
-        name: "Perry",
-        age: 4,
-        src: Perry,
-        facts: [
-          "Perry loves all humans.",
-          "Perry demolishes all snacks.",
-          "Perry hates the rain."
-        ]
-      },
-      {
-        name: "Tubby",
-        age: 4,
-        src: Tubby,
-        facts: [
-          "Tubby is really stupid.",
-          "Tubby does not like walks.",
-          "Angelina used to hate Tubby, but claims not to anymore."
-        ]
-      }
-    ]
-  }
   return (
     <div className="App">
-    
-       <BrowserRouter>
-    <Routes>
-      <Route path="/dogs" element={<Dogs />} />
-      <Route path="/dogs/whiskey" element={<Whiskey />} />
-      <Route path="/dogs/duke" element={<Duke />} />
-      <Route path="/dogs/perry" element={<Perry />} />
-      <Route path="/dogs/tubby" element={<Tubby />} />
-    </Routes>
-    </BrowserRouter>
+      <BrowserRouter>
+      <Nav dogs={DOGS} />
+        <Routes>
+          <Route path="/dogs" element={<DogsList dogs={DOGS} />} />
+          <Route path="/dogs/:name" element={<DogDetails dogs={DOGS} />} />
+         
+          <Route path="*" element={<Navigate to="/dogs" replace />} />
+        </Routes>
+      </BrowserRouter>
     </div>
   );
 }
