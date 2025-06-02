@@ -1,3 +1,46 @@
+ /* src/Nav.css */
+
+.Nav {
+    display: flex;
+    align-items: center;
+    padding: 0.75rem 1.5rem;
+    background: #343a40;
+  }
+  
+  .Nav a {
+    color: #e9ecef;
+    text-decoration: none;
+    font-weight: 600;
+    margin-left: 1rem;
+  }
+  
+  .Nav-home {
+    margin-right: auto;     /* push all the other links to the right */
+    font-size: 20px;
+    margin-left: 0;         /* no left‐margin on Home link */
+  }
+  
+  .Nav-item:hover,
+  .Nav-item.active,
+  .Nav-home:hover,
+  .Nav-home.active {
+    color: #ffc107;
+    border-bottom: 2px solid #ffc107;
+  }
+  
+  /* Optional: remove underline from all links when not active */
+  .Nav a {
+    text-decoration: none;
+  }
+  
+  /* If you want a little extra hover feedback: */
+  .Nav-item:hover,
+  .Nav-home:hover {
+    opacity: 0.9;
+  }
+  
+ 
+ 
  .Dogs {
     background-color: #f8f8f8;
     padding: 20px;
@@ -25,3 +68,5 @@
     height: auto;
     margin-top: 10px;
   }
+
+  

@@ -1,9 +1,9 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import Whiskey from './Whiskey.js';
-import Duke from './Duke.js';
-import Perry from './Perry.js';
-import Tubby from './Tubby.js';
+import Whiskey from './dogs/Whiskey.js';
+import Duke from './dogs/Duke.js';
+import Perry from './dogs/Perry.js';
+import Tubby from './dogs/Tubby.js';
 
 export const DOGS = [
     {
